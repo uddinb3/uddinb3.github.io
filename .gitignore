@@ -1,4 +1,5 @@
 .vscode
 images/*.png
 !images/aboutmeAwake.png
+!images/favicon.png
 js/
