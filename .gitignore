@@ -1,0 +1,4 @@
+.vscode
+images/*.png
+!images/aboutmeAwake.png
+js/

@@ -1,0 +1,467 @@
+:root {
+	font-family: "Comic Sans MS";
+	font-size: 16px;
+	
+	--textPrimaryColor: #AAAAAA;
+	--textSecondaryColor: #4444FF;
+	--animationTextColorTransitionSpeed: 300ms;
+	--backgroundPrimaryColor: rgba(20, 20, 20, 0.2); /*#141414;*/
+	--backgroundSecondaryColor: rgba(102, 102, 102, 0.4); /*#666666;*/
+}
+
+body {
+	background-color: black;
+	color: white;
+	margin: 0;
+	padding: 0;
+}
+
+.verticalNavbar {
+	background-color: var(--backgroundPrimaryColor);
+	border-bottom: solid blueviolet;
+	border-right: solid blueviolet;
+	border-bottom-right-radius: 1em;
+	font-size: 1.5em;
+	height: 50vh; /*100vh;*/
+	margin: 0;
+	position: absolute;
+	text-align: center;
+	width: 10rem;
+}
+
+.verticalNavbar ul {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.verticalNavbar a {
+	align-items: center;
+	color: var(--textPrimaryColor);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-decoration: none;
+	transition: color var(--animationTextColorTransitionSpeed), background-color var(--animationTextColorTransitionSpeed);
+	width: 100%;
+}
+
+.verticalNavbar a:hover {
+	background-color: var(--backgroundSecondaryColor);
+	color: var(--textSecondaryColor);
+}
+
+.verticalNavbarBar {
+	justify-content: center;
+}
+
+.verticalNavbarBar li {
+	width: 100%;
+}
+
+.verticalNavbarItemPage_Link {
+	height: 5rem;
+ 	transition: color var(--animationTextColorTransitionSpeed), background-color var(--animationTextColorTransitionSpeed), height var(--animationTextColorTransitionSpeed);
+}
+
+.verticalNavbarItemPage.hasSubHeadingList .verticalNavbarItemPage_SubHeadingList {
+	font-size: 16px;
+    height: 0;
+    opacity: 0;
+    pointer-events: none;
+	transform: translateY(-3rem);
+	transition: var(--animationTextColorTransitionSpeed);
+}
+
+.downArrow {
+	border: solid var(--textPrimaryColor);
+	border-width: 0 3px 3px 0;
+	display: inline-block;
+	margin-bottom: 0.2rem;
+	padding: 0.3rem;
+	transform: rotate(45deg);
+	transition: var(--animationTextColorTransitionSpeed);
+}
+
+.hasSubHeadingList:focus-within > .verticalNavbarItemPage_SubHeadingList {
+	height: 7.1em;
+	opacity: 100%;
+	pointer-events: all;
+	transform: translateY(0);
+}
+
+.verticalNavbarItemPage_Link:hover .downArrow,
+.hasSubHeadingList:focus-within .downArrow {
+	border-color: var(--textSecondaryColor);
+}
+
+.hasSubHeadingList:focus-within .downArrow {
+	margin-bottom: -0.2rem;
+	transform: rotate(45deg) scale(-1);
+}
+
+.hasSubHeadingList:focus-within .verticalNavbarItemPage_Link_Text {
+	color: var(--textSecondaryColor);
+}
+
+/*******************MAIN CONTENT**********/
+
+html {
+	scroll-behavior: smooth;
+}
+
+.contentSection {
+	display: block;
+	/* margin-left: 5rem; */
+	/* margin-bottom: 4em; */
+	margin: 5vh 5vw;
+	padding: 1em;
+	
+}
+
+.contentSection.pageIntroduction {
+	display: inline-block;
+	height: 50vh;
+	margin: 0 0 0 10rem;
+	padding: 0 1em;
+	text-align: center;
+}
+
+.contentSection h2 {
+	text-align: center;
+}
+
+.projectItem {
+	list-style: none;
+	margin-bottom: 4em;
+	padding: 0.25em 1em;
+}
+
+.finishedSection {
+	--sectionColor_Light:rgba(154, 255, 114, 0.2); /*rgba(154, 255, 114, 0.5);*/
+	--sectionColor_Dark:rgba(154, 255, 114, 0.05);
+}
+
+.activeSection {
+	--sectionColor_Light:rgba(255, 193, 100, 0.2); /*rgba(255, 193, 100, 0.5)*/
+	--sectionColor_Dark:rgba(255, 193, 100, 0.05);
+}
+
+.hiatusOrSuspendedSection {
+	--sectionColor_Light:rgba(255, 149, 100, 0.2);
+	--sectionColor_Dark:rgba(255, 149, 100, 0.05);
+}
+
+.plannedSection {
+	--sectionColor_Light:rgba(255, 40, 40, 0.2); /*rgba(255, 40, 40, 0.5)*/
+	--sectionColor_Dark:rgba(255, 40, 50, 0.05);
+}
+
+.CancelledSection {
+	--sectionColor_Light:rgba(255, 14, 14, 0.2);
+	--sectionColor_Dark:rgba(255, 14, 14, 0.05);
+}
+
+.glassyBG {
+	border-radius: 1em;
+	background: linear-gradient(
+		to bottom left,
+		var(--sectionColor_Light),
+		var(--sectionColor_Dark)
+	);
+}
+
+.growOnHover {
+	transition: transform var(--animationTextColorTransitionSpeed);
+}
+.growOnHover:hover {
+	transform: scale(1.03);
+}
+
+.projectItem.glassyBG {
+	--sectionColor_Light:rgba(255, 255, 255, 0.1); /*TODO::*/ 
+	--sectionColor_Dark:rgba(255, 255, 255, 0.005);
+}
+
+.projectName {
+	text-indent: 10vw;
+}
+
+.projectType {
+	text-indent: 5vw;
+}
+
+/*************************************** Contact Page ***************************/
+
+.topHorizontalNavbar{
+	background-color: var(--backgroundPrimaryColor);
+	font-size: 1.5em;
+	height: 10vh;
+	position: fixed;
+	width: 100vw;
+}
+
+.topHorizontalNavbarBar {
+	align-items: center;
+	display: flex;
+	flex-direction: row;
+	height: 100%;
+	justify-content: space-evenly;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+.topHorizontalNavbarItemLink {
+	align-items: center;
+	color: var(--textPrimaryColor); 
+	display: flex;
+	justify-content: space-evenly;
+	text-decoration: none;
+	transition: var(--animationTextColorTransitionSpeed);
+}
+
+.topHorizontalNavbarItemLink:hover {
+	background-color: var(--backgroundSecondaryColor);
+	color: var(--textSecondaryColor);
+	font-size: 32px;
+	font-weight: 600;
+}
+
+.bigCenterPageBannerThing {
+	/* background: purple; */
+	background: rgba(255, 255, 255, 0.1);
+	display: flex;
+	height: 80vh;
+	position: absolute;
+	top: 10vh;
+	width: 100vw;
+}
+
+.halfScreenWidthBox {
+	width: 50vw;
+}
+
+.contactSocialInformation {
+	align-items: center;
+	/* background: aqua;  */
+	/* border-right: solid 1px white; */
+	display: flex;
+	height: 100%;
+	padding: 0 1em;
+	text-align: justify;
+}
+
+.contactContactForm {
+	align-self: center;
+	/* background: peachpuff; */
+	/* border-left: solid 1px white; */
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	padding: 0 1em;
+}
+
+.whiteBorderLeft {
+	border-left: solid 1px white;
+}
+.whiteBorderRight {
+	border-right: solid 1px white;
+}
+
+.contactContactFormForm input[type = "text"],
+.contactContactFormForm input[type = "email"],
+.contactContactFormForm select,
+.contactContactFormForm textarea {
+	border: 1px solid var(--backgroundPrimaryColor);
+	border-radius: 0.5em;
+	font-family: unset;
+	margin-top: 0.5em;
+	margin-bottom: 1em;
+	padding: 1em;
+	width: 90%;
+}
+
+.contactContactFormForm textarea {
+	font-size: smaller; /*To match the others*/
+	resize: none;
+}
+
+.contactContactFormForm input[type = "submit"] {
+	background: rgba(68, 68, 68, 1);
+	/* border: none; */
+	border-radius: 1em;
+	color: white;
+	cursor: pointer;
+	display: block;
+	margin: 0 auto;
+	padding: 1em 2em;
+	transition: background var(--animationTextColorTransitionSpeed);
+}
+
+.contactContactFormForm input[type = "submit"]:hover {
+	background-color: rgba(102, 102, 102, 1);
+}
+
+.contactContactFormForm label {
+	margin-left: 5%;
+}
+
+.contactSocialInformationText a {
+	align-items: center;
+	color: white;
+	display: flex;
+	text-decoration: none;
+}
+
+.contactSocialInformation svg {
+	background: white;
+	border-radius: 0.4em;
+	margin: 0 1em 0 5%;
+}
+
+/************ABOUT ME****************/
+
+.infoCardThing {
+	align-items: center;
+	background: #060c21;
+	display: flex;
+	height: 20em;
+	justify-content: center;
+	margin: 2.5em;
+	position: relative;
+	transition: var(--animationTextColorTransitionSpeed);
+	width: 20em;
+}
+
+.infoCardThing:hover {
+	height: 25em;
+}
+
+.infoCardThing .imageHolder {
+	align-items: center;
+	box-sizing: border-box;
+	display: flex;
+	height: 100%;
+	justify-content: center;
+	left: 0;
+	top: 0;
+	padding: 0.5em;
+	position: absolute;
+	width: 100%;
+}
+
+.infoCardThing .imageHolder img {
+	max-width: 100%;
+	opacity: 0.1;
+	position: absolute;
+	transition: var(--animationTextColorTransitionSpeed);
+}
+
+.infoCardThing .imageHolder img:nth-child(2) {
+	opacity: 0;
+}
+
+/* .infoCardThing:hover .imageHolder img {
+	opacity: 1;
+} */
+
+.infoCardThing:hover .imageHolder img:nth-child(1) {
+	opacity: 0;
+}
+.infoCardThing:hover .imageHolder img:nth-child(2) {
+	opacity: 1;
+}
+
+.infoCardThing::before {
+	background: rgba(255, 255, 255, 1);
+	bottom: -0.2em;
+	content: "";
+	left: -0.2em;
+	position: absolute;
+	right: -0.2em;
+	top: -0.2em;
+	z-index: -1;
+}
+
+.infoCardThing::after {
+	background: rgba(255, 255, 255, 1);
+	bottom: -0.2em;
+	content: "";
+	filter: blur(2.5em);
+	left: -0.2em;
+	position: absolute;
+	right: -0.2em;
+	top: -0.2em;
+	z-index: -2;
+}
+
+.infoCardThing::before,
+.infoCardThing::after {
+	background: linear-gradient(43deg, #ff0004 0%, #c35dbb 50%, #4e00ff 100%); ;
+	/* background-color: #ff0004;
+	background-image: linear-gradient(43deg, #ff0004 0%, #c35dbb 50%, #4e00ff 100%);  cssgradient.io*/ 
+}
+
+.infoCardThing .textInformation {
+	align-items: center;
+	background: rgba(0, 0, 0, 0.4);
+	bottom: 0.6em;
+	display: flex;
+	flex-direction: column;
+	height: 7em;
+	justify-content: center;
+	left: 0.6em;
+	opacity: 0;
+	position: absolute;
+	right: 0.6em;
+	text-align: center;
+	transition: var(--animationTextColorTransitionSpeed);
+}
+
+.infoCardThing:hover .textInformation {
+	opacity: 1;
+}
+
+.infoCardThing .textInformation .nameHolder,
+.infoCardThing .textInformation .descriptionInformation {
+	transition: var(--animationTextColorTransitionSpeed);
+}
+
+.infoCardThing:hover .textInformation .nameHolder {
+	color: white;
+	font-size: 24px;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+	page-break-after: always;
+}
+
+.infoCardThing .textInformation .descriptionInformation {
+	font-size: 6px; /*just for animation*/
+}
+.infoCardThing:hover .textInformation .descriptionInformation {
+	color: white;
+	font-size: 16px;
+	margin-top: 0.5em;
+}
+
+.aboutMeCardBox {
+	align-items: center;
+	display: flex;
+}
+
+.aboutMeTextInformation {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	padding: 0 1em;
+	text-align: justify;
+}
+
+
