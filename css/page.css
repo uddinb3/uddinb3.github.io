@@ -203,6 +203,7 @@ html {
 	height: 10vh;
 	position: fixed;
 	width: 100vw;
+	z-index: 1;
 }
 
 .topHorizontalNavbarBar {
@@ -234,13 +235,13 @@ html {
 }
 
 .bigCenterPageBannerThing {
-	/* background: purple; */
 	background: rgba(255, 255, 255, 0.1);
 	display: flex;
-	height: 80vh;
+	/* height: 80vh; */
+	margin: 5vh 5vw;
 	position: absolute;
 	top: 10vh;
-	width: 100vw;
+	width: 90vw;
 }
 
 .halfScreenWidthBox {
@@ -252,7 +253,7 @@ html {
 	/* background: aqua;  */
 	/* border-right: solid 1px white; */
 	display: flex;
-	height: 100%;
+	/* height: 100%; */
 	padding: 0 1em;
 	text-align: justify;
 }
@@ -453,6 +454,7 @@ html {
 .aboutMeCardBox {
 	align-items: center;
 	display: flex;
+	justify-content: center;
 }
 
 .aboutMeTextInformation {
@@ -460,8 +462,123 @@ html {
 	display: flex;
 	flex-direction: column;
 	height: 100%;
+	justify-content: center;
 	padding: 0 1em;
 	text-align: justify;
+}
+
+/***************************** MOBILE STYLES ************************************************/
+
+@media screen and (max-width: 768px) {
+	.topHorizontalNavbar {
+		background-color: rgba(20, 20, 20, 1); /* is backgroundPrimaryColor but no transparency */
+	}
+
+	.aboutMeCardBox {
+		display: none;
+	}
+	.whiteBorderRight {
+		border-right: none;
+	}
+	.whiteBorderLeft {
+		border-left: none;
+	}
+	.aboutMeTextInformation {
+		padding: 0 2em
+	}
+
+	/******* Projects Page **************/
+	.verticalNavbar {
+		background-color: rgba(20, 20, 20, 1);
+		border-bottom-left-radius: 1em;
+		border-left: solid blueviolet;
+		height: 10vh;
+		margin: 0 2.5vw;
+		position: sticky;
+		top: 0;
+		width: 95vw;
+		z-index: 1;
+	}
+
+	ul.verticalNavbarBar {
+		flex-direction: row;
+		justify-content: center;
+	}
+
+	.verticalNavbar .verticalNavbarItemPage_Link {
+		height: 10vh;
+	}
+
+	.verticalNavbarItemPage_SubHeading_Link {
+		background-color: rgba(20, 20, 20, 1);
+		border-bottom: solid blueviolet;
+		border-left: solid blueviolet;
+		border-right: solid blueviolet;
+		padding: 0.3em 0;
+	}
+	.verticalNavbarItemPage_SubHeadingList .verticalNavbarItemPage_SubHeading:last-of-type .verticalNavbarItemPage_SubHeading_Link {
+		border-bottom-left-radius: 1em;
+		border-bottom-right-radius: 1em;
+	}
+
+	.verticalNavbarItemPage.hasSubHeadingList .verticalNavbarItemPage_SubHeadingList {
+		height: 0;
+		opacity: 0;
+		pointer-events: none;
+		transform: translate(-0.15rem); /*just to keep it more in the middle.*/
+		transition: var(--animationTextColorTransitionSpeed);
+	}
+
+	.hasSubHeadingList:focus-within > .verticalNavbarItemPage_SubHeadingList,
+	.hasSubHeadingList:hover, .hasSubHeadingList:active > .verticalNavbarItemPage.hasSubHeadingList {
+		opacity: 1;
+		pointer-events: all;
+		z-index: 1;
+	}
+
+	.contentSection.pageIntroduction {
+		margin: unset;
+		padding: 0 3em
+	}
+
+	/**************** Contact Page **************/
+
+	.contactMainContent.bigCenterPageBannerThing {
+		flex-direction: column;
+	}
+
+	.fullWidthBox_Mobile {
+		width: 100%;
+	}
+	.whiteBorderBottom_Mobile {
+		border-bottom: solid 1px white;
+	}
+	.whiteBorderTop_Mobile {
+		border-top: solid 1px white;
+	}
+
+	.contactSocialInformation {
+		padding: unset;
+	}
+	.contactSocialInformationText {
+		padding: 0 1em;
+	}
+	.contactContactForm {
+		padding: unset;
+	}
+	.contactContactFormText {
+		padding: 0 1em;
+	}
+	.contactContactFormForm {
+		padding: 0 2em;
+	}
+
+	.contactContactFormForm input[type = "text"],
+	.contactContactFormForm input[type = "email"],
+	.contactContactFormForm select,
+	.contactContactFormForm textarea {
+		width: 95%;
+	}
 }
 
 
