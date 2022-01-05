@@ -571,7 +571,7 @@ html {
 
 	.contentSection.pageIntroduction {
 		height: auto;
-		margin: initial;
+		margin: 5vh 0 0 0;
 		padding: 0 1em;
 	}
 
