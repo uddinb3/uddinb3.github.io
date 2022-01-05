@@ -105,3 +105,31 @@ main {
 }
 
 
+/***************************** MOBILE STYLES ************************************************/
+
+@media screen and (max-width: 768px) {
+
+	main {
+		margin-bottom: 0;
+		position: initial;
+	}
+
+	canvas {
+		display: none;
+	}
+
+	.navbar {
+		bottom: auto;
+		height: auto;
+		top: 40vh;
+
+	}
+
+	.navbarBar {
+		flex-direction: column;
+	}
+
+
+
+}
+

@@ -470,8 +470,14 @@ html {
 /***************************** MOBILE STYLES ************************************************/
 
 @media screen and (max-width: 768px) {
+
+	:root {
+		font-size: 18px;
+	}
+
 	.topHorizontalNavbar {
 		background-color: rgba(20, 20, 20, 1); /* is backgroundPrimaryColor but no transparency */
+		font-size: 18px;
 	}
 
 	.aboutMeCardBox {
@@ -484,6 +490,7 @@ html {
 		border-left: none;
 	}
 	.aboutMeTextInformation {
+		font-size: 14px;
 		padding: 0 2em
 	}
 
@@ -505,6 +512,10 @@ html {
 		justify-content: center;
 	}
 
+	.verticalNavbar li {
+		font-size: 18px;
+	}
+
 	.verticalNavbar .verticalNavbarItemPage_Link {
 		height: 10vh;
 	}
@@ -521,6 +532,14 @@ html {
 		border-bottom-right-radius: 1em;
 	}
 
+	.downArrow {
+		padding: 0.2rem;
+	}
+
+	.verticalNavbarItemPage_SubHeading {
+		font-size: 14px;
+	}
+
 	.verticalNavbarItemPage.hasSubHeadingList .verticalNavbarItemPage_SubHeadingList {
 		height: 0;
 		opacity: 0;
@@ -529,17 +548,58 @@ html {
 		transition: var(--animationTextColorTransitionSpeed);
 	}
 
-	.hasSubHeadingList:focus-within > .verticalNavbarItemPage_SubHeadingList,
-	.hasSubHeadingList:hover, .hasSubHeadingList:active > .verticalNavbarItemPage.hasSubHeadingList {
+	.hasSubHeadingList:hover .verticalNavbarItemPage_SubHeadingList {
 		opacity: 1;
 		pointer-events: all;
 		z-index: 1;
 	}
 
-	.contentSection.pageIntroduction {
-		margin: unset;
-		padding: 0 3em
+	.verticalNavbarItemPage_Link:hover .downArrow,
+	.hasSubHeadingList:hover .downArrow {
+		border-color: var(--textSecondaryColor);
 	}
+
+	.hasSubHeadingList:hover .downArrow {
+		margin-bottom: -0.2rem;
+		transform: rotate(45deg) scale(-1);
+	}
+
+	.hasSubHeadingList:hover .verticalNavbarItemPage_Link_Text {
+		color: var(--textSecondaryColor);
+	}
+
+
+	.contentSection.pageIntroduction {
+		height: auto;
+		margin: initial;
+		padding: 0 1em;
+	}
+
+	.listOfProjects {
+		padding-left: 0;
+	}
+
+	.contentSectionStatus {
+		font-size: 20px;
+	}
+
+	.projectItem .projectName {
+		font-size: 18px;
+		text-align: center;
+		text-indent: 0;
+	}
+
+	.projectItem .projectType {
+		font-size: 16px;
+		text-align: center;
+		text-indent: 0;
+	}
+
+	.projectItem .projectDescription {
+		font-size: 14px;
+		text-indent: 0;
+	}
+
 
 	/**************** Contact Page **************/
 
