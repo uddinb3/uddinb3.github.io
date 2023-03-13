@@ -195,6 +195,65 @@ html {
 	text-indent: 5vw;
 }
 
+
+.projectInfoButton {
+	display: inline-block;
+	border-radius: 12px;
+	margin-left: 2vw;
+	padding: 12px;
+}
+
+.projectInfoButton .projectInfoButton_DropDownText {
+	background-color: unset;
+	border: unset;
+	color: var(--textPrimaryColor);
+	cursor: pointer;
+	font-size: inherit;
+	font-family: inherit;
+	padding-block: unset;
+	padding-inline: unset;
+	text-indent: inherit;
+	text-decoration: none;
+	text-indent: unset;
+
+}
+
+.projectInfoButton_Content {
+	font-size: 0;
+	height: 0;
+	margin-left: 1vw;
+	opacity: 0;
+	transition: all 500ms ease-in-out 300ms, opacity 300ms ease-in-out; /* transition gets used from expanded to small. */
+	width: 0;
+}
+
+.projectInfoButton_Content .projectInfoMedia.projectInfoImage {
+	height: 0;
+	opacity: 0;
+	transition: all 500ms ease-in-out 300ms, opacity 300ms ease-in-out; /* transition gets used from expanded to small. */
+}
+
+.projectInfoButton:focus-within > .projectInfoButton_Content {
+	font-size: 16px;
+	height: 100%;
+	margin-left: 1vw;
+	opacity: 1;
+	transition: all 500ms ease-in-out, opacity 300ms ease-in-out 400ms; /* transition gets used from small to expanded. */
+	width: 100%;
+}
+
+.projectInfoButton:focus-within > .projectInfoButton_Content .projectInfoMedia.projectInfoImage {
+	height: 100%;
+	opacity: 1;
+	transition: all 500ms ease-in-out, opacity 300ms ease-in-out 400ms;
+}
+
+.projectInfoButton:focus-within .downArrow {
+	margin-bottom: -0.2rem;
+	transform: rotate(45deg) scale(-1);
+}
+
+
 /*************************************** Contact Page ***************************/
 
 .topHorizontalNavbar{
