@@ -3,3 +3,5 @@ images/*.png
 !images/aboutmeAwake.png
 !images/favicon.png
 js/
+tmptst.html
+!videos/Projects/FlappingBerdVideo1
