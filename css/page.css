@@ -227,7 +227,7 @@ html {
 	width: 0;
 }
 
-.projectInfoButton_Content .projectInfoMedia.projectInfoImage {
+.projectInfoButton_Content .projectInfoMedia {
 	height: 0;
 	opacity: 0;
 	transition: all 500ms ease-in-out 300ms, opacity 300ms ease-in-out; /* transition gets used from expanded to small. */
@@ -242,7 +242,7 @@ html {
 	width: 100%;
 }
 
-.projectInfoButton:focus-within > .projectInfoButton_Content .projectInfoMedia.projectInfoImage {
+.projectInfoButton:focus-within > .projectInfoButton_Content .projectInfoMedia {
 	height: 100%;
 	opacity: 1;
 	transition: all 500ms ease-in-out, opacity 300ms ease-in-out 400ms;
