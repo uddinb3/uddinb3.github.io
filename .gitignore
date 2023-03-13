@@ -4,3 +4,4 @@ images/*.png
 !images/favicon.png
 js/
 tmptst.html
+!videos/Projects/FlappingBerdVideo1
